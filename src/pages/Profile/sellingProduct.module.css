@@ -1,0 +1,50 @@
+#input {
+  min-width: 225px;
+}
+#sidebar {
+  margin-bottom: 20px;
+}
+#inputSearch {
+  background-color: #ffffff;
+  border-color: #8e8e93;
+}
+.main {
+  margin-top: 58px;
+  margin-bottom: 50px;
+}
+.shopping {
+  border-radius: 100%;
+  background-color: #f3456f;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+}
+.shoppingAddress {
+  border-radius: 100%;
+  background-color: #f36f45;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+}
+.myAccount {
+  border-radius: 100%;
+  background-color: #456bf3;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+}
+.nama {
+  padding-left: 12px;
+}
+#navbar {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+#btnJual {
+  background-color: #db3022;
+  border-radius: 25px;
+  width: 100px;
+  color: white;
+}

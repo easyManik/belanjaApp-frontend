@@ -1,0 +1,18 @@
+#container {
+  width: 25%;
+}
+#btn1 {
+  background-color: #db3022;
+  color: white;
+}
+#btn2 {
+  color: #9b9b9b;
+  border-color: gray;
+}
+#submit {
+  border-radius: 20px;
+  background-color: #db3022;
+}
+#login {
+  color: #db3022;
+}

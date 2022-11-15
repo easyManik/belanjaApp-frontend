@@ -1,0 +1,16 @@
+#btnSearch {
+  background-color: #ffffff;
+  border-color: #8e8e93;
+}
+#btnLogin {
+  background-color: #db3022;
+  border-radius: 25px;
+  width: 100px;
+}
+#btnRegister {
+  background-color: white;
+  color: #8e8e93;
+  border-color: #8e8e93;
+  border-radius: 25px;
+  width: 100px;
+}
