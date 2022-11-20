@@ -1,4 +1,5 @@
 import React from "react";
+import Assets from "../../img";
 import style from "./resetPw.module.css";
 
 export default function requestRpw() {
@@ -8,7 +9,7 @@ export default function requestRpw() {
         <div className="card-body">
           <div className="column d-flex mt-2">
             <div className="d-flex mt-5 mx-auto">
-              <img src="../assets/img/Vector.svg" alt="" className="logo" />
+              <img src={Assets.shoppingBag} alt="" className="logo" />
               <h1>Blanja</h1>
             </div>
           </div>

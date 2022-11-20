@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import style from "./Profile.module.css";
+import Assets from "../../img";
+import style from "./navbar.module.css";
 
 export default function navbarProfile() {
   return (
@@ -9,7 +10,7 @@ export default function navbarProfile() {
         <div className="d-flex justify-content-around">
           <Link className="navbar-brand" to="">
             <img
-              src={require("./shopping-bag 1.png")}
+              src={Assets.shoppingBag}
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -23,7 +24,7 @@ export default function navbarProfile() {
           <form className="d-none d-md-flex input-group w-auto my-auto">
             <div>
               <input
-                autocomplete="off"
+                autoComplete="off"
                 type="search"
                 className="form-control rounded"
                 placeholder="Search"
@@ -39,33 +40,36 @@ export default function navbarProfile() {
                 data-target="#exampleModal"
                 id={style.btnSearch}
               >
-                <img src={require("./filter 1.png")} alt="" />
+                <img src={Assets.filter} alt="" />
               </button>
             </div>
           </form>
         </div>
         <div className="d-flex justify-content-around">
           <Link to="#" className="px-2">
-            <img src={require("./bell (1) 1.png")} alt="" />
+            <img src={Assets.shoppingCard} alt="" />
           </Link>
           <Link to="#" className="px-2">
-            <img src={require("./mail (3) 1.png")} alt="" />
+            <img src={Assets.bell} alt="" />
+          </Link>
+          <Link to="#" className="px-2">
+            <img src={Assets.mail} alt="" />
           </Link>
           <div className="px-2">
-            <a
-              class="d-flex align-items-center hidden-arrow"
-              href="#"
-              id="navbarDropdownMenuAvatar"
+            <Link
+              className="d-flex align-items-center hidden-arrow"
+              to="#"
               role="button"
               aria-expanded="true"
             >
               <img
                 src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                class="rounded-circle"
+                className="rounded-circle"
                 height="30"
                 loading="lazy"
+                alt=""
               />
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

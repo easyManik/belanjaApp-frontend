@@ -4,13 +4,14 @@ import ChangePw from "./changePw";
 import ForgetPw from "./resetPw";
 import { Route, Link, Routes } from "react-router-dom";
 import style from "./resetPw.module.css";
+import Assets from "../../img";
 
 export default function resetPw() {
   return (
     <div>
       <div className="container column mt-5 d-flex">
         <div className="d-flex mt-5 mx-auto">
-          <img src="../assets/img/Vector.svg" alt="" className="logo" />
+          <img src={Assets.shoppingBag} alt="" className="logo" />
           <h1>Blanja</h1>
         </div>
       </div>

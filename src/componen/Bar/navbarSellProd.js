@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import style from "./Profile.module.css";
+import Assets from "../../img";
+import style from "./navbar.module.css";
 
 export default function navbarProfile() {
   return (
@@ -9,7 +10,7 @@ export default function navbarProfile() {
         <div className="d-flex justify-content-around">
           <Link className="navbar-brand" to="">
             <img
-              src={require("./shopping-bag 1.png")}
+              src={Assets.shoppingBag}
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -39,23 +40,20 @@ export default function navbarProfile() {
                 data-target="#exampleModal"
                 id={style.btnSearch}
               >
-                <img src={require("./filter 1.png")} alt="" />
+                <img src={Assets.filter} alt="" />
               </button>
             </div>
           </form>
         </div>
         <div className="d-flex justify-content-around">
           <Link to="#" className="px-2">
-            <img src={require("./shopping-cart (2).png")} alt="" />
+            <img src={Assets.bell} alt="" />
           </Link>
           <Link to="#" className="px-2">
-            <img src={require("./bell (1) 1.png")} alt="" />
-          </Link>
-          <Link to="#" className="px-2">
-            <img src={require("./mail (3) 1.png")} alt="" />
+            <img src={Assets.mail} alt="" />
           </Link>
           <div className="px-2">
-            <a
+            <Link
               class="d-flex align-items-center hidden-arrow"
               href="#"
               id="navbarDropdownMenuAvatar"
@@ -67,8 +65,9 @@ export default function navbarProfile() {
                 class="rounded-circle"
                 height="30"
                 loading="lazy"
+                alt=""
               />
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

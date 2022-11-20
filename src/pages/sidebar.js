@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Link, Routes } from "react-router-dom";
-import style from "./Profile/sellingProduct.module.css";
+import style from "./product/sellingProduct.module.css";
 import LoginCust from "./auth/loginCust";
 
 export default function sidebar() {

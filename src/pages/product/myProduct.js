@@ -1,9 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import axios from "axios";
+import Axios from "axios";
 import React, { useState, useEffect } from "react";
-import styles from "./Profile.module.css";
-import NavbarProfile from "./navbarProfile";
-import { MDBInputGroup, MDBInput, MDBIcon, MDBBtn } from "mdb-react-ui-kit";
+import styles from "./myProduct.module.css";
+import NavbarProfile from "../../componen/Bar/navbarProfile";
+import { Link } from "react-router-dom";
+// import delete from './img/delete.png'
+import Assets from "../../img";
 
 export default function myProduct() {
   const [data, setData] = useState([]);
@@ -26,6 +28,22 @@ export default function myProduct() {
   const [selected, setSelected] = useState(null);
   const [onedit, setOnedit] = useState(false);
   const [temp, setTemp] = useState(null);
+
+  const deleteData = async (id) => {
+    await Axios.delete(`http://localhost:4200/products/${id}`);
+    getData();
+  };
+  //link ke s
+  const editForm = (item) => {
+    console.log(item);
+    setTemp(item);
+    setInputData({
+      ...inputData,
+      name: item.name,
+      stock: item.stock,
+      price: item.price,
+    });
+  };
 
   useEffect(() => {
     selected ? setOnedit(true) : setOnedit(false);
@@ -50,10 +68,9 @@ export default function myProduct() {
     getData();
   }, []);
 
-  let users = `http://localhost:3060/products?sortby=${sortBy}&sort=${sort}&search=${inputData.search}`;
+  let users = `http://localhost:4200/products?sortby=${sortBy}&sort=${sort}&search=${inputData.search}`;
   const getData = () => {
-    axios
-      .get(users)
+    Axios.get(users)
       .then((res) => {
         console.log("get data success");
         console.log(res.data.data);
@@ -84,14 +101,14 @@ export default function myProduct() {
         <NavbarProfile />
       </header>
       <main>
-        <div class="container">
-          <div class="card bg-light w-100 h-100">
-            <div class="card-body">
+        <div className="container">
+          <div className="card bg-light w-100 h-100">
+            <div className="card-body">
               <h1>My Product</h1>
 
               <div className="mb-3">
                 <input
-                  autocomplete="off"
+                  autoComplete="off"
                   type="search"
                   className="form-control rounded"
                   placeholder="Search"
@@ -113,27 +130,47 @@ export default function myProduct() {
                       <th scope="col col-2" id={styles.foto}>
                         Stock
                       </th>
+                      <th id={styles.foto}></th>
                     </tr>
                   </thead>
                   <tbody>
-                    {data.map((item, index) => (
-                      <tr
-                        key={index + 1}
-                        className={`${
-                          item.id == selected ? "bg-info" : "bg-white"
-                        }`}
-                        onClick={
-                          item.id == selected
-                            ? () => setSelected(null)
-                            : () => setSelected(item.id)
-                        }
-                      >
-                        <th scope="row">{index + 1}</th>
-                        <td>{item.name}</td>
-                        <td>{item.price}</td>
-                        <td>{item.stock}</td>
-                      </tr>
-                    ))}
+                    {data
+                      ? data.map((item, index) => (
+                          <tr
+                            key={index + 1}
+                            className={`${
+                              item.id == selected ? "bg-info" : "bg-white"
+                            }`}
+                            onClick={
+                              item.id == selected
+                                ? () => setSelected(null)
+                                : () => (setSelected(item.id), editForm(item))
+                            }
+                          >
+                            <td>{index + 1}</td>
+                            <td>{item.name}</td>
+                            <td>{item.price}</td>
+                            <td>{item.stock}</td>
+                            <td>
+                              <img
+                                onClick={() => deleteData(item.id)}
+                                src={Assets.deleteProduct}
+                                className="img me-3"
+                                id={styles.tindakanStyle}
+                                alt="..."
+                              />
+                              <img
+                                as={Link}
+                                to={`./products/${item.id}`}
+                                src={Assets.editProduct}
+                                className="img me-3"
+                                id={styles.tindakanStyle}
+                                alt="..."
+                              />
+                            </td>
+                          </tr>
+                        ))
+                      : "data not found"}
                   </tbody>
                 </table>
               </div>

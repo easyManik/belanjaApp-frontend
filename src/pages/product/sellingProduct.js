@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import axios from "axios";
-import NavbarSellProd from "./navbarSellProd";
+import NavbarSellProd from "../../componen/Bar/navbarSellProd";
 import React, { useState, useEffect } from "react";
 import style from "./sellingProduct.module.css";
 
@@ -17,7 +17,7 @@ export default function sellingProduct() {
     name: "",
     price: "",
     stock: "",
-    // category_id: "1",
+    category_id: "1",
     photo: "",
   });
   const [sortBy, setSortBy] = useState("name");
@@ -48,7 +48,7 @@ export default function sellingProduct() {
     getData();
   }, []);
 
-  let users = `http://localhost:3060/products?sortby=${sortBy}&sort=${sort}&search=${inputData.search}`;
+  let users = `http://localhost:4200/products?sortby=${sortBy}&sort=${sort}&search=${inputData.search}`;
   const getData = () => {
     axios
       .get(users)
@@ -77,7 +77,7 @@ export default function sellingProduct() {
   };
 
   const postForm = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const formData = new FormData();
     formData.append("name", inputData.name);
     formData.append("stock", inputData.stock);
@@ -87,7 +87,7 @@ export default function sellingProduct() {
     console.log(formData);
     if (!selected) {
       axios
-        .post("http://localhost:3060/products/", formData, {
+        .post("http://localhost:4200/products/", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -113,7 +113,7 @@ export default function sellingProduct() {
         });
     } else {
       axios
-        .put(`http://localhost:3060/products/${selected}`, formData, {
+        .put(`http://localhost:4200/products/${selected}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -271,7 +271,7 @@ export default function sellingProduct() {
             <div className="d-flex justify-content-end">
               {onedit ? (
                 <button className="btn" type="submit" id={style.btnJual}>
-                  Jual
+                  Update
                 </button>
               ) : (
                 <button className="btn mt-4" type="submit" id={style.btnJual}>

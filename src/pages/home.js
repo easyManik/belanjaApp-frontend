@@ -2,10 +2,14 @@ import React from "react";
 import style from "./home.module.css";
 import { Carousel } from "react-responsive-carousel";
 import { Route, Link, Routes } from "react-router-dom";
+import Navbar from "../componen/Bar/navbar";
 
 export default function home() {
   return (
     <div className="container">
+      <header>
+        <Navbar />
+      </header>
       <hr></hr>
       {/* <Carousel>
         <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
@@ -130,210 +134,211 @@ export default function home() {
             <div className="col-md-max" id="category">
               <h2>Category</h2>
               <p>What are you currently looking for</p>
-
-              <div
-                id="categoryCarousol"
-                className="carousel slide"
-                data-ride="carousel"
-                data-interval="0"
-              >
-                <div className="carousel-inner">
-                  <div className="item carousel-item">
-                    <div className="row">
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw1">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 15.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
+              <Carousel className="autoPlay">
+                <div
+                  id="categoryCarousol"
+                  className="autoPlay"
+                  data-ride="carousel"
+                  data-interval="0"
+                >
+                  <div className="carousel-inner">
+                    <div className="item carousel-item">
+                      <div className="row">
+                        <div className="col-sm-3">
+                          <div className={style.thumb_wrapper} id={style.tw1}>
+                            <div className={style.img_box}>
+                              <img
+                                src={require("../img/category/hiclipart 15.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>Kaos 2</h5>
+                            </div>
                           </div>
-                          <div className="carousel-caption ">
-                            <h5>Kaos 2</h5>
+                        </div>
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper" id={style.tw2}>
+                            <div className="img-box">
+                              <img
+                                src={require("../img/category/hiclipart 21.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>T-Shirt 2</h5>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper" id={style.tw3}>
+                            <div className="img-box">
+                              <img
+                                src={require("../img/category/hiclipart 22.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>Jaket 2</h5>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper" id={style.tw4}>
+                            <div className="img-box">
+                              <img
+                                src={require("../img/category/hiclipart 26.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>Jeans 2</h5>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw2">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 21.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
+                    </div>
+                    <div className="item carousel-item">
+                      <div className="row">
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper" id={style.tw1}>
+                            <div className="img-box">
+                              <img
+                                src={require("../img/category/hiclipart 15.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>T-Shirt 3</h5>
+                            </div>
                           </div>
-                          <div className="carousel-caption ">
-                            <h5>T-Shirt 2</h5>
+                        </div>
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper" id={style.tw2}>
+                            <div className="img-box">
+                              <img
+                                src={require("../img/category/hiclipart 21.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>Boxer 3</h5>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper" id={style.tw3}>
+                            <div className="img-box">
+                              <img
+                                src={require("../img/category/hiclipart 22.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>Jaket 3</h5>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper" id={style.tw4}>
+                            <div className="img-box">
+                              <img
+                                src={require("../img/category/hiclipart 26.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>Jeans 3</h5>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw3">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 22.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div className="carousel-caption ">
-                            <h5>Jaket 2</h5>
+                    </div>
+                    <div className="item carousel-item active">
+                      <div className="row">
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper" id={style.tw1}>
+                            <div className="img-box">
+                              <img
+                                src={require("../img/category/hiclipart 15.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>T-Shirt 4</h5>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw4">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 26.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper" id={style.tw2}>
+                            <div className="img-box">
+                              <img
+                                src={require("../img/category/hiclipart 21.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>Boxer 4</h5>
+                            </div>
                           </div>
-                          <div className="carousel-caption ">
-                            <h5>Jeans 2</h5>
+                        </div>
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper" id={style.tw3}>
+                            <div className="img-box">
+                              <img
+                                src={require("../img/category/hiclipart 22.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>Jaket 4</h5>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper" id={style.tw4}>
+                            <div className="img-box">
+                              <img
+                                src={require("../img/category/hiclipart 26.png")}
+                                className="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div className="carousel-caption ">
+                              <h5>Jeans 4</h5>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="item carousel-item">
-                    <div className="row">
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw1">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 15.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div className="carousel-caption ">
-                            <h5>T-Shirt 3</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw2">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 21.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div className="carousel-caption ">
-                            <h5>Boxer 3</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw3">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 22.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div className="carousel-caption ">
-                            <h5>Jaket 3</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw4">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 26.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div className="carousel-caption ">
-                            <h5>Jeans 3</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="item carousel-item active">
-                    <div className="row">
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw1">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 15.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div className="carousel-caption ">
-                            <h5>T-Shirt 4</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw2">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 21.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div className="carousel-caption ">
-                            <h5>Boxer 4</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw3">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 22.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div className="carousel-caption ">
-                            <h5>Jaket 4</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-sm-3">
-                        <div className="thumb-wrapper" id="tw4">
-                          <div className="img-box">
-                            <img
-                              src={require("../img/category/hiclipart 26.png")}
-                              className="img-fluid"
-                              alt=""
-                            />
-                          </div>
-                          <div className="carousel-caption ">
-                            <h5>Jeans 4</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <a
+                    className="renderArrowPrev"
+                    href="#categoryCarousol"
+                    data-slide="prev"
+                  >
+                    <i className="fa fa-angle-left"></i>
+                  </a>
+                  <a
+                    className="renderArrowNext"
+                    href="#categoryCarousol"
+                    data-slide="next"
+                  >
+                    <i className="fa fa-angle-right"></i>
+                  </a>
                 </div>
-                <a
-                  className="carousel-control-prev"
-                  href="#categoryCarousol"
-                  data-slide="prev"
-                >
-                  <i className="fa fa-angle-left"></i>
-                </a>
-                <a
-                  className="carousel-control-next"
-                  href="#categoryCarousol"
-                  data-slide="next"
-                >
-                  <i className="fa fa-angle-right"></i>
-                </a>
-              </div>
+              </Carousel>
             </div>
           </div>
         </div>
@@ -740,7 +745,7 @@ export default function home() {
                           </p>
                           <p className="card-text">Zalora Cloth</p>
                           <div className="star-rating">
-                            <ul clclassNameass="list-inline">
+                            <ul className="list-inline">
                               <li className="list-inline-item">
                                 <i className="fa fa-star"></i>
                               </li>

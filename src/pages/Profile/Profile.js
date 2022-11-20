@@ -1,11 +1,19 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import styles from "./Profile.module.css";
+import NavbarSellProd from "../../componen/Bar/navbarSellProd";
+import style from "./../product/sellingProduct.module.css";
+import { Sidebar } from "react-pro-sidebar";
+import Sidebars from "../sidebar";
+import Assets from "../../img";
 
 export default function profile() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [data, setData] = useState(null);
+  const [onedit, setOnedit] = useState(false);
+
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [startDate, setStartDate] = useState(new Date());
   let users = "https://jsonplaceholder.typicode.com/users/1";
@@ -26,6 +34,10 @@ export default function profile() {
   }, []);
   return (
     <div className="container">
+      <header>
+        <NavbarSellProd />
+        {/* <Sidebars /> */}
+      </header>
       <main>
         <div class="container">
           <div class="card bg-light w-100 h-100">
@@ -106,15 +118,31 @@ export default function profile() {
                 </div>
                 <div className="col col-4" id={styles.foto}>
                   <img
-                    src="/src/assets/img/caurosel/benjamin-voros-TnNo84AJJ5A-unsplash 1.jpg"
+                    src={Assets.avatar}
                     class="img me-3"
                     alt="..."
+                    id={styles.fotoProfil}
                   />
                   <input
                     type="file"
                     className="form-control"
                     id={styles.foto_file}
                   />
+                </div>
+                <div className="d-flex justify-content-end">
+                  {onedit ? (
+                    <button className="btn" type="submit" id={style.btnJual}>
+                      Save
+                    </button>
+                  ) : (
+                    <button
+                      className="btn mt-4"
+                      type="submit"
+                      id={style.btnJual}
+                    >
+                      Save
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

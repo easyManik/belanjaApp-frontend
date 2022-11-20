@@ -9,11 +9,12 @@ import ChangePw from "./pages/auth/changePw";
 import ResetPw from "./pages/auth/resetPw";
 import RequestRpw from "./pages/auth/requestRpw";
 import Home from "./pages/home";
-import SellingProduct from "./pages/Profile/sellingProduct";
-import MyProduct from "./pages/Profile/myProduct";
+import SellingProduct from "./pages/product/sellingProduct";
+import MyProduct from "./pages/product/myProduct";
 import Sidebar from "./pages/sidebar";
-import Navbar from "./pages/navbar";
-import NavbarProfile from "./pages/Profile/navbarProfile";
+import Navbar from "./componen/Bar/navbar";
+import NavbarProfile from "./componen/Bar/navbarProfile";
+import authCheck from "./componen/authProtect";
 
 import { BrowserRouter, Route, Link, Routes, Navigate } from "react-router-dom";
 
@@ -34,7 +35,14 @@ function App() {
           <Route path="/requestRpw" element={<RequestRpw />} />
           <Route path="/home" element={<Home />} />
           <Route path="/sellingProduct" element={<SellingProduct />} />
-          <Route path="/myProduct" element={<MyProduct />} />
+          <Route
+            path="/myProduct"
+            element={
+              <authCheck>
+                <MyProduct />
+              </authCheck>
+            }
+          />
           <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/navbar" element={<Navbar />} />
           <Route path="/navbarProfile" element={<NavbarProfile />} />

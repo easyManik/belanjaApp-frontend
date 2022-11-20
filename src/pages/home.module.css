@@ -77,7 +77,8 @@ h2 {
   text-align: center;
   overflow: hidden;
 }
-.carousel .thumb-wrapper {
+/* .carousel  */
+.thumb_wrapper {
   padding: 35px 15px;
   background: #fff;
   border-radius: 6px;
@@ -85,7 +86,8 @@ h2 {
   position: relative;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
-.carousel .item .img-box {
+/* .carousel .item  */
+.img_box {
   height: 120px;
   margin-bottom: 20px;
   width: 100%;

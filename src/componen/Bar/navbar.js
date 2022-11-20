@@ -1,8 +1,9 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import style from "./navbar.module.css";
-import LoginCust from "./auth/loginCust";
-import RegisterCust from "./auth/registerCust";
+import LoginCust from "../../pages/auth/loginCust";
+import RegisterCust from "../../pages/auth/registerCust";
+import Assets from "../../img";
 
 export default function navbar() {
   return (
@@ -11,7 +12,7 @@ export default function navbar() {
         <div className="d-flex justify-content-around">
           <Link className="navbar-brand" to="">
             <img
-              src={require("../img/shopping-bag 1.png")}
+              src={Assets.shoppingBag}
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -37,12 +38,12 @@ export default function navbar() {
               data-target="#exampleModal"
               id={style.btnSearch}
             >
-              <img src={require("../img/filter 1.png")} alt="" />
+              <img src={Assets.filter} alt="" />
             </button>
           </form>
         </div>
         <Link href="#">
-          <img src={require("../img/shopping-cart (2).png")} alt="" />
+          <img src={Assets.shoppingCard} alt="" />
         </Link>
 
         <div className="d-flex justify-content-between">
