@@ -2,7 +2,7 @@ import React from "react";
 import style from "./home.module.css";
 import { Carousel } from "react-responsive-carousel";
 import { Route, Link, Routes } from "react-router-dom";
-import Navbar from "../componen/Bar/navbar";
+import Navbar from "../componen/barSellingProd/navbar";
 
 export default function home() {
   return (

@@ -1,11 +1,42 @@
-import React from "react";
 import style from "./registerCust.module.css";
 import LoginSell from "./loginSell";
 import RegisterCust from "./registerCust";
 import { Route, Link, Routes } from "react-router-dom";
 import Assets from "../../img";
 
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useState, useEffect } from "react";
+import { register } from "../../Redux/actions/registerSelller";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 export default function registerSell() {
+  const [fullname, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [storeName, setStoreName] = useState("");
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const postData = (e) => {
+    e.preventDefault();
+    console.log(fullname);
+    console.log(email);
+    console.log(password);
+    console.log(phone);
+    console.log(storeName);
+
+    let data = {
+      fullname,
+      email,
+      phone,
+      storeName,
+      password,
+    };
+    dispatch(register(data, navigate));
+  };
   return (
     <div>
       <div className="container column mt-5 d-flex">
@@ -38,7 +69,7 @@ export default function registerSell() {
       </div>
 
       <div className="container kotak_login mt-4 mb-4 d-flex justify-content-center">
-        <form className="col-sm-5">
+        <form onSubmit={postData} className="col-sm-5">
           <div className="form-group">
             <input
               type="text"
@@ -46,6 +77,9 @@ export default function registerSell() {
               id="inputEmail1"
               aria-describedby="emailHelp"
               placeholder="Name"
+              value={fullname}
+              name="fullname"
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="form-group mt-2">
@@ -54,6 +88,9 @@ export default function registerSell() {
               className="form-control"
               id="inputEmail1"
               placeholder="Email"
+              value={email}
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="form-group mt-2">
@@ -62,6 +99,9 @@ export default function registerSell() {
               className="form-control"
               id="inputPhoneNumber1"
               placeholder="Phone Number"
+              value={phone}
+              name="phone"
+              onChange={(e) => setPhone(e.target.value)}
             />
           </div>
           <div className="form-group mt-2">
@@ -70,6 +110,9 @@ export default function registerSell() {
               className="form-control"
               id="inputStoreName1"
               placeholder="Store Name"
+              value={storeName}
+              name="storeName"
+              onChange={(e) => setStoreName(e.target.value)}
             />
           </div>
           <div className="form-group mt-2">
@@ -78,38 +121,37 @@ export default function registerSell() {
               className="form-control"
               id="inputPassword1"
               placeholder="Password"
+              value={password}
+              name="password"
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+          <div
+            className="container mt-2 d-flex justify-content-center"
+            role="group"
+            aria-label="Basic example"
+          >
+            <button
+              type="submit"
+              id={style.submit}
+              className="btn btn-primary col-sm-5 submit"
+            >
+              Submit
+            </button>
+          </div>
+
+          <div className="container mt-2 d-flex justify-content-center">
+            <p className="card-text">
+              Already have a Tokopedia account?
+              <Link to="/loginSell" id={style.login}>
+                Login{" "}
+              </Link>
+              <Routes>
+                <Route path="/loginSell" element={<LoginSell />} />
+              </Routes>
+            </p>
+          </div>
         </form>
-      </div>
-
-      <div
-        className="container mt-2 d-flex justify-content-center"
-        role="group"
-        aria-label="Basic example"
-      >
-        <Link
-          to="/loginSell"
-          className="btn btn-primary col-sm-5 submit"
-          id={style.submit}
-        >
-          Submit{" "}
-        </Link>
-        <Routes>
-          <Route path="/loginSell" element={<LoginSell />} />
-        </Routes>
-      </div>
-
-      <div className="container mt-2 d-flex justify-content-center">
-        <p className="card-text">
-          Already have a Tokopedia account?
-          <Link to="/loginSell" id={style.login}>
-            Login{" "}
-          </Link>
-          <Routes>
-            <Route path="/loginSell" element={<LoginSell />} />
-          </Routes>
-        </p>
       </div>
     </div>
   );

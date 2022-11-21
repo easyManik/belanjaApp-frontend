@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
 import style from "./loginCust.module.css";
 import RegisterSell from "./registerSell";
 import LoginCust from "./loginCust";
@@ -7,7 +7,28 @@ import ForgetPw from "./resetPw";
 import { Route, Link, Routes } from "react-router-dom";
 import Assets from "../../img";
 
+import React, { useState, useEffect } from "react";
+import { login } from "../../Redux/actions/loginSeller.js";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 export default function loginSell() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const postData = (e) => {
+    e.preventDefault();
+    console.log(email);
+    console.log(password);
+    let data = {
+      email,
+      password,
+    };
+    dispatch(login(data, navigate));
+  };
   return (
     <div>
       <div className="container column mt-5 d-flex">

@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import axios from "axios";
-import NavbarSellProd from "../../componen/Bar/navbarSellProd";
+import NavbarSellProd from "../../componen/barSellingProd/navbarSellProd";
 import React, { useState, useEffect } from "react";
 import style from "./sellingProduct.module.css";
+import Sidebar from "../../componen/barSellingProd/sidebar";
 
 export default function sellingProduct() {
   const [data, setData] = useState([]);
@@ -152,9 +153,9 @@ export default function sellingProduct() {
     console.log(data);
   };
   return (
-    <div>
+    <div className="container">
       <header>
-        <NavbarSellProd />
+        <Sidebar />
       </header>
       <form onSubmit={postForm} className="container">
         <main className={style.main}>

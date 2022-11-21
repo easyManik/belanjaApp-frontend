@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import styles from "./Profile.module.css";
-import NavbarSellProd from "../../componen/Bar/navbarSellProd";
+import NavbarSellProd from "../../componen/barSellingProd/navbarSellProd";
 import style from "./../product/sellingProduct.module.css";
 import { Sidebar } from "react-pro-sidebar";
 import Sidebars from "../sidebar";

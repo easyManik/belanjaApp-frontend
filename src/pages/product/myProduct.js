@@ -2,10 +2,10 @@
 import Axios from "axios";
 import React, { useState, useEffect } from "react";
 import styles from "./myProduct.module.css";
-import NavbarProfile from "../../componen/Bar/navbarProfile";
 import { Link } from "react-router-dom";
 // import delete from './img/delete.png'
 import Assets from "../../img";
+import Sidebar from "../../componen/barMyProduct/sidebar";
 
 export default function myProduct() {
   const [data, setData] = useState([]);
@@ -94,25 +94,36 @@ export default function myProduct() {
         messageTime();
       });
   };
+  const handleChange = (e) => {
+    setInputData({
+      ...inputData,
+      [e.target.name]: e.target.value,
+    });
+    console.log(data);
+  };
 
   return (
     <div className="container">
-      <header>
-        <NavbarProfile />
+      <header className="flex">
+        <Sidebar />
       </header>
+
       <main>
         <div className="container">
           <div className="card bg-light w-100 h-100">
             <div className="card-body">
               <h1>My Product</h1>
 
-              <div className="mb-3">
+              <div className="search mb-3">
                 <input
                   autoComplete="off"
-                  type="search"
+                  type="text"
                   className="form-control rounded"
                   placeholder="Search"
                   style={{ width: "200px" }}
+                  value={inputData.search}
+                  name="search"
+                  onChange={handleChange}
                 ></input>
               </div>
 
