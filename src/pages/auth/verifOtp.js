@@ -1,28 +1,29 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import "./loginCust";
+import InputLogin from "../../components/base/Input/inputLogin";
 import React, { useState } from "react";
-import { VerifOtp } from "../../Redux/actions/verifOtp";
+// import { VerifOtp } from "../../Redux/actions/verifOtp";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import style from "./loginCust.module.css";
 import Assets from "../../img";
+import { VerifOtp } from "../../Redux/actions/userAction";
 
 export default function verifotp() {
-  const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState("");
-
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const postData = (e) => {
+  const [formVerif, setFormVerif] = useState({
+    email: "",
+    otp: "",
+  });
+  const handleChange = (e) => {
+    setFormVerif({
+      ...formVerif,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleVerif = (e) => {
     e.preventDefault();
-    console.log(email);
-    console.log(otp);
-    let data = {
-      email,
-      otp,
-    };
-    dispatch(VerifOtp(data, navigate));
+    dispatch(VerifOtp(formVerif, Navigate));
   };
 
   return (
@@ -39,27 +40,25 @@ export default function verifotp() {
       </div>
 
       <div className="container kotak_login mt-4 d-flex justify-content-center">
-        <form onSubmit={postData} className="col-sm-5">
+        <form onSubmit={handleVerif} className="col-sm-5">
           <div className="form-group">
-            <input
+            <InputLogin
               type="email"
-              className="form-control"
-              id="inputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Email"
-              value={email}
               name="email"
-              onChange={(e) => setEmail(e.target.value)}
+              id="email"
+              value={formVerif.email}
+              placeholder="email"
+              onChange={handleChange}
             />
           </div>
           <div className="form-group mt-2">
-            <input
-              type="text"
+            <InputLogin
+              type="number"
               name="otp"
-              className="form-control"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-              placeholder="OTP"
+              id="otp"
+              value={formVerif.otp}
+              placeholder="Otp"
+              onChange={handleChange}
             />
           </div>
 

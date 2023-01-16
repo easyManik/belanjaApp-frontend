@@ -1,21 +1,26 @@
 import "./App.css";
 import { useState } from "react";
-import Profile from "./pages/Profile/Profile";
-import LoginCust from "./pages/auth/loginCust";
-import LoginSell from "./pages/auth/loginSell";
-import RegisterCust from "./pages/auth/registerCust";
-import RegisterSell from "./pages/auth/registerSell";
-import ChangePw from "./pages/auth/changePw";
-import ResetPw from "./pages/auth/resetPw";
-import RequestRpw from "./pages/auth/requestRpw";
-import Home from "./pages/home";
-import SellingProduct from "./pages/product/sellingProduct";
-import MyProduct from "./pages/product/myProduct";
-import Sidebar from "./componen/barMyProduct/sidebar";
-import Navbar from "./componen/barSellingProd/navbar";
+
 import VerifOtp from "./pages/auth/verifOtp";
 
-import { BrowserRouter, Route, Link, Routes, Navigate } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Checkout from "./pages/checkout/checkout";
+import DetailProduct from "./pages/detailProduct/DetailProduct";
+import Home from "./pages/home/homes";
+import LoginCustomer from "./pages/auth/login/loginCustomer";
+import LoginSeller from "./pages/auth/login/loginSeller";
+import MyBag from "./pages/myBag/myBag";
+import Page404 from "./pages/Page404";
+import ProfileCustomer from "./pages/ProfileCustomer/profileCustomer";
+import RegisterCustomer from "./pages/auth/Register/registerCustomer";
+import RegisterSeller from "./pages/auth/Register/registerSeller";
+import SellingProduct from "./pages/sellingProduct/sellingProduct";
+import RequireAuth from "./components/base/requireAuth/requireAuth";
+import EditProduct from "./pages/editProduct/editProduct";
+import ProfileSeller from "./pages/ProfileSeller/profileSeller";
+import MyProduct from "./pages/MyProduct/myProduct";
+import MyOrder from "./pages/MyOrder/myOrder";
 
 function App() {
   const [title, setTitle] = useState("E coomerce");
@@ -23,30 +28,76 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/" element={<Navigate to="/home" />} replace="true" /> */}
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/loginCust" element={<LoginCust />} />
-          <Route path="/loginSell" element={<LoginSell />} />
-          <Route path="/registerCust" element={<RegisterCust />} />
-          <Route path="/registerSell" element={<RegisterSell />} />
-          <Route path="/changePw" element={<ChangePw />} />
-          <Route path="/resetPw" element={<ResetPw />} />
-          <Route path="/requestRpw" element={<RequestRpw />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/sellingProduct" element={<SellingProduct />} />
           <Route path="/verifOtp" element={<VerifOtp />} />
-          <Route path="/sidebar" element={<Sidebar />} />
 
+          <Route path="/loginCust" element={<LoginCustomer />} />
+          <Route path="/loginSell" element={<LoginSeller />} />
+          <Route path="/registerCust" element={<RegisterCustomer />} />
+          <Route path="/registerSell" element={<RegisterSeller />} />
           <Route
-            path="/myProduct"
+            path="/"
+            element={<Navigate to="/loginCust" replace="true" />}
+          />
+          <Route path="/home" element={<Home />} />
+          <Route
+            path="/myBag"
             element={
-              <authCheck>
-                <MyProduct />
-              </authCheck>
+              <RequireAuth>
+                <MyBag />
+              </RequireAuth>
             }
           />
-          <Route path="/sidebar" element={<Sidebar />} />
-          <Route path="/navbar" element={<Navbar />} />
+          <Route
+            path="/detailProduct/:id"
+            element={
+              <RequireAuth>
+                <DetailProduct />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <RequireAuth>
+                <Checkout />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/myOrder"
+            element={
+              <RequireAuth>
+                <MyOrder />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/profileCustomer"
+            element={
+              <RequireAuth>
+                <ProfileCustomer />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/profileSeller"
+            element={
+              <RequireAuth>
+                <ProfileSeller />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/sellingProduct"
+            element={
+              <RequireAuth>
+                <SellingProduct />
+              </RequireAuth>
+            }
+          />
+          <Route path="/myProduct" element={<MyProduct />} />
+          <Route path="/editProduct/:id" element={<EditProduct />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -68,3 +68,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+#### Konsep dari Redux dan HOC
+
+1. Redux.
+   Redux adalah sebuah library, digunakan untuk mengelola state. Redux itu disebut sebagai store, dimana hanya ada satu store dalam satu aplikasi yang disebut dengan Single Source of Truth.
+   Redux menawarkan solusi global state. Cara kerjanya sederhana, Daripada pusing-pusing mengelola state per komponen, state dari setiap komponen di pindahkan ke global state yang disebut store.
+
+Store ini akan terhubung dengan komponen. Selanjutnya kita hanya perlu berurusan dengan storenya si redux. Redux yang akan mengurus komunikasi komponent dan perubahan UI.
+
+2. HOC
+   React mengadopsi HOC dengan cara berikut:
+
+- react-cookies memungkinkan kita untuk menyimpan dan memuat cookie dari komponen mana pun, yang fungsinya dimasukkan dengan withCookies()HOC.
+- react-redux memasok connect()HOC yang menginjeksi status dan tindakan sebagai props, sehingga memberikan akses komponen ke penyimpanan redux.
+- react-router-dom menyertakan withRouter() si HOC, memberikan komponen riwayat router, lokasi, dan kecocokan terdekat <Route />.
+
+Pada projek react penggunaannya biasanya dengan menggunakan render() yang akan mengembalikan original componen dengan props tambahan.
