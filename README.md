@@ -1,87 +1,95 @@
-# Getting Started with Create React App
+<p align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">Blanja</h3>
+  <p align="center">
+    <image align="center" width="200px" height="100px" src='./Logo.png' />
+  </p>
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✏️ About
 
-### `npm start`
+Blanja is an online shop application that sell products. This application applies a multi-user system where buyer can buy things and seller can seller product.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🔖Build With
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [React Js](https://reactjs.org)
+- [Axios](https://www.npmjs.com/package/axios)
+- [Bootstrap](https://www.npmjs.com/package/bootstrap)
+- [Sweetalert](https://www.npmjs.com/package/sweetalert)
+- [Redux](https://redux.js.org/)
 
-### `npm test`
+## 💻 How To Install?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Clone This Repo
 
-### `npm run build`
+```
+git clone https://github.com/easyManik/belanjaApp-frontend.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Go To Folder Repo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+cd belanjaApp-frontend
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Install Module
 
-### `npm run eject`
+```
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Type ` npm start` To Start Website
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Screenshot
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+| Login Page                                | Register Customer Page                                                   |
+| ----------------------------------------- | ------------------------------------------------------------------------ |
+| ![Login](/readme/login.jpeg "Login Page") | ![Register Customer](/readme/registerCust.jpeg "Register Customer Page") |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Register Seller Page                                                 | Home Page                              |
+| -------------------------------------------------------------------- | -------------------------------------- |
+| ![Register Seller](/readme/registerSell.jpeg "Register Seller Page") | ![Home](/readme/home.jpeg "Home Page") |
 
-## Learn More
+| Home Page                                               | Detail Product                                                           |
+| ------------------------------------------------------- | ------------------------------------------------------------------------ |
+| ![Home Product](/readme/home2.jpeg "Home Product Page") | ![Detail Product Page](/readme/detailProduct.jpeg "Detail Product Page") |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Detail Product                                                       | Checkout                                           |
+| -------------------------------------------------------------------- | -------------------------------------------------- |
+| ![Detail Product](/readme/detailProduct2.jpeg "Detail Product Page") | ![Checkout](/readme/checkout.jpeg "Checkout Page") |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| My Bag                                      | My Product                                              |
+| ------------------------------------------- | ------------------------------------------------------- |
+| ![My Bag](/readme/mybag.jpeg "My Bag Page") | ![My Product](/readme/myProduct.jpeg "My Product Page") |
 
-### Code Splitting
+| My Order Customer Role                                | Profile Customer Page                                                 |
+| ----------------------------------------------------- | --------------------------------------------------------------------- |
+| ![My Order](/readme/myorderCust.jpeg "My Order Page") | ![Profile Customer](/readme/profileCust.jpeg "Profile Customer Page") |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| Profile Seller Page                                                 | Selling Product                                             |
+| ------------------------------------------------------------------- | ----------------------------------------------------------- |
+| ![Profile Seller](/readme/profileSeller.jpeg "Profile Seller Page") | ![Sell Product](/readme/sellingProduct.jpeg "Sell Product") |
 
-### Analyzing the Bundle Size
+| Selling Product 2                                                 |
+| ----------------------------------------------------------------- |
+| ![Sell Product](/readme/sellingProduct2.jpeg "Sell Product Page") |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Advanced Configuration
+## ✍️ Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [@easyManik](https://github.com/easyManik)
 
-### Deployment
+## Link
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-#### Konsep dari Redux dan HOC
-
-1. Redux.
-   Redux adalah sebuah library, digunakan untuk mengelola state. Redux itu disebut sebagai store, dimana hanya ada satu store dalam satu aplikasi yang disebut dengan Single Source of Truth.
-   Redux menawarkan solusi global state. Cara kerjanya sederhana, Daripada pusing-pusing mengelola state per komponen, state dari setiap komponen di pindahkan ke global state yang disebut store.
-
-Store ini akan terhubung dengan komponen. Selanjutnya kita hanya perlu berurusan dengan storenya si redux. Redux yang akan mengurus komunikasi komponent dan perubahan UI.
-
-2. HOC
-   React mengadopsi HOC dengan cara berikut:
-
-- react-cookies memungkinkan kita untuk menyimpan dan memuat cookie dari komponen mana pun, yang fungsinya dimasukkan dengan withCookies()HOC.
-- react-redux memasok connect()HOC yang menginjeksi status dan tindakan sebagai props, sehingga memberikan akses komponen ke penyimpanan redux.
-- react-router-dom menyertakan withRouter() si HOC, memberikan komponen riwayat router, lokasi, dan kecocokan terdekat <Route />.
-
-Pada projek react penggunaannya biasanya dengan menggunakan render() yang akan mengembalikan original componen dengan props tambahan.
+- [Backend](https://github.com/easyManik/restApi-belanjaApp.git)
+- [Visit Project]()
