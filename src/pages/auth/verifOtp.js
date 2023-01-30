@@ -4,7 +4,7 @@ import React, { useState } from "react";
 // import { VerifOtp } from "../../Redux/actions/verifOtp";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import style from "./loginCust.module.css";
+import style from "../auth/login/login.css";
 import Assets from "../../img";
 import { VerifOtp } from "../../Redux/actions/userAction";
 
