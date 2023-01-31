@@ -92,4 +92,4 @@ Contributions are what make the open source community such an amazing place to b
 ## Link
 
 - [Backend](https://github.com/easyManik/restApi-belanjaApp.git)
-- [Visit Project]()
+- [Visit App](https://belanja-app-frontend-u3l5.vercel.app/loginCust)
